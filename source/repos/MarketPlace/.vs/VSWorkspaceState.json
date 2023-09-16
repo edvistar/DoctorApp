@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SistemaInventario",
+    "\\SistemaInventario\\Areas",
+    "\\SistemaInventario\\Areas\\Inventario",
+    "\\SistemaInventario\\Areas\\Inventario\\Views",
+    "\\SistemaInventario\\Areas\\Inventario\\Views\\Home"
+  ],
+  "SelectedNode": "\\SistemaInventario\\Areas\\Inventario\\Views\\Home\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}

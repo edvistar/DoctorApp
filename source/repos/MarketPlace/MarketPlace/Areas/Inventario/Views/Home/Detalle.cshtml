@@ -1,0 +1,45 @@
+﻿@model MarketPlace.Modelos.ViewModels.DetalleVM
+@using MarketPlace.Utilidades
+@{
+    ViewData["Title"] = "Detalle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post">
+    <main class="mt-3 pt-2">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="@DS.ImageRoute@Model.Producto.ImageUrl" class="img-fluid" alt="" />
+                    <div class="row ">
+                        <a asp-action="Index" class="btn btn-outline-primary ms-1">
+                            Regresar
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="p-4">
+                        <div class="mb-3">
+                            <span class="badge bg-dark p-2 me-2">@Model.Producto.Categoria.Name</span>
+                            <span class="badge bg-info p-2">@Model.Producto.Marca.Name</span>
+                        </div>
+
+                        <p class="lead text-black">
+                            <h2>$ @String.Format("{0:#,##0.00}", Model.Producto.Price)</h2>
+                        </p>
+
+                        <strong style="font-size: 20px;">@Model.Producto.Description</strong>
+
+                        <p>Serie: @Model.Producto.SerialNumber</p>
+                        <h2>Pedidos</h2>
+                        <strong style="font-size: 20px;">@Model.Producto.ContactPhoneNumber</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+</form>
+
+

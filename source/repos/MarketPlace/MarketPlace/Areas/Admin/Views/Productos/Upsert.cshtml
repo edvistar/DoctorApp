@@ -1,0 +1,217 @@
+﻿@model MarketPlace.Modelos.ViewModels.ProductoVM
+@using MarketPlace.Utilidades
+@{
+    ViewData["Title"] = "Upsert";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var titulo = "Crear Producto";
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div class="row p-3 border-0">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    </div>
+    @if (Model.Producto.Id != 0)
+    {
+        // Actualizar
+        titulo = "Actualizar Producto";
+        <input type="hidden" asp-for="Producto.Id" />
+        <input type="hidden" asp-for="Producto.ImageUrl" />
+        
+    }
+
+    <div class="col-12 border-bottom">
+        <h2 class="text-primary">@titulo</h2>
+    </div>
+    <div class="row">
+        <div class="col-8 pt-4">
+            <div class="form-group row mb-2">
+                <div class="col-4">
+                    <label asp-for="Producto.SerialNumber"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Producto.SerialNumber" class="form-control" />
+                    <span asp-validation-for="Producto.SerialNumber" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-4">
+                    <label asp-for="Producto.Name"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Producto.Name" class="form-control" />
+                    <span asp-validation-for="Producto.Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-4">
+                    <label asp-for="Producto.Status"></label>
+                </div>
+                <div class="col-4">
+                    <select asp-for="Producto.Status" class="form-select input-image">
+                        <option value=true>Disponible</option>
+                        <option value=false>Agotado</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-4">
+                    <label asp-for="Producto.Description"></label>
+                </div>
+                <div class="col-8">
+                    <textarea asp-for="Producto.Description" class="form-control"></textarea>
+                    <span asp-validation-for="Producto.Description" class="text-danger"></span>
+
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-4">
+                    Categoria
+                </div>
+                <div class="col-8">
+                    @Html.DropDownListFor(c => c.Producto.CategoriaId, Model.ListaCategorias, "Seleccione una Categoria",
+                    new { @class = "form-control" })
+                    <span asp-validation-for="Producto.CategoriaId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-4">
+                    Marca
+                </div>
+                <div class="col-8">
+                    @Html.DropDownListFor(m => m.Producto.MarcaId, Model.ListaMarcas, "Seleccione una Marca",
+                    new { @class = "form-control" })
+                    <span asp-validation-for="Producto.MarcaId" class="text-danger"></span>
+                </div>
+            </div>
+            
+            <div class="form-group row mb-2">
+                <div class="col-4">
+                    <label asp-for="Producto.Price"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Producto.Price" class="form-control" />
+                    <span asp-validation-for="Producto.Price" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-4">
+                    <label asp-for="Producto.Descuento"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Producto.Descuento" class="form-control" />
+                    <span asp-validation-for="Producto.Descuento" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-4">
+                    <label asp-for="Producto.TieneDescuento"></label>
+                </div>
+                <div class="col-4">
+                    <select asp-for="Producto.TieneDescuento" class="form-select input-image">
+                        <option value=true>Si</option>
+                        <option value=false>No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-4">
+                    <label asp-for="Producto.ContactPhoneNumber"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Producto.ContactPhoneNumber" class="form-control" />
+                    <span asp-validation-for="Producto.ContactPhoneNumber" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-4">
+                    Imagen
+                </div>
+                <div class="col-8">
+                    <img src="~/images/content/TuLogo.png" alt="Imagen del producto" class="img-circle previsualizar" style="height:100px; width:100px;" />
+                    <label for="escogerImg" class="input-image form-control">Seleccionar Imagen del Producto</label>
+                    <input asp-for="Producto.ImageUrl" type="file" name="files" id="escogerImg"  class="form-control " hidden/>
+                </div>
+            </div>
+            @*<div class="form-group row mb-2">
+                <div class="col-4">
+                    Producto Padre
+                </div>
+                <div class="col-8">
+                    @Html.DropDownListFor(c => c.Producto.PadreId, Model.ListaPadre, "Seleccione una Padre",
+                    new { @class = "form-control" })
+                    <span asp-validation-for="Producto.PadreId" class="text-danger"></span>
+                </div>
+            </div>*@
+
+            <div class="form-group row">
+                <div class="col-8 offset-4">
+                    @if (Model.Producto.Id != 0)
+                    {
+                        <partial name="_BotonesActualizarYRegresar" model="Model.Producto.Id" />
+                    }
+                    else
+                    {
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" onclick="return validarImagen()" class="btn btn-primary form-control">Crear</button>
+                            </div>
+                            <div class="col">
+                                <a asp-action="Index" class="btn btn-success form-control">Regresar</a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+        <div class="col-4">
+            @if (Model.Producto.Id != 0)
+            {
+                <div class="col-12 pt-4">
+                    <img src="@Model.Producto.ImageUrl" style="width: 90%; border-radius:5px; border:1px solid #bbb9b9;" />
+                </div>
+            }
+        </div>
+    </div>
+    
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        function validarImagen() {
+            if (document.getElementById("escogerImg").value == "") {
+                swal("Error", "Debe Seleccione una imagen para el producto", "error");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <script>
+        $("#escogerImg").change(function () {
+            console.log("cambio");
+            let imagen = this.files[0];
+            if (imagen["type"] != "image/jpeg" && imagen["type"] != "image/png") {
+                $("#escogerImg").val("");
+                $(".previsualizar").attr("src", event.target.result);
+                alert("Debe subir una imagen en formato png o jpeg ");
+            }
+            else if (imagen["size"] > 2000000) {
+                $("#escogerImg").val("");
+                $(".previsualizar").attr("src", event.target.result);
+                alert("la imagen debe tener maximo 2mb");
+            }
+            else {
+                var datosImagen = new FileReader;
+                datosImagen.readAsDataURL(imagen);
+
+                $(datosImagen).on("load", function (event) {
+                    var rutaImagen = event.target.result;
+                    $(".previsualizar").attr("src", rutaImagen);
+                });
+            }
+        })
+
+    </script>
+}
