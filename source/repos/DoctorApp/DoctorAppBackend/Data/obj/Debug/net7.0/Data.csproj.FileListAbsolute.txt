@@ -1,0 +1,17 @@
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\bin\Debug\net7.0\Data.deps.json
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\bin\Debug\net7.0\Data.dll
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\bin\Debug\net7.0\Data.pdb
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\bin\Debug\net7.0\Models.dll
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\bin\Debug\net7.0\Models.pdb
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\obj\Debug\net7.0\Data.csproj.AssemblyReference.cache
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\obj\Debug\net7.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\obj\Debug\net7.0\Data.AssemblyInfoInputs.cache
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\obj\Debug\net7.0\Data.AssemblyInfo.cs
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\obj\Debug\net7.0\Data.csproj.CoreCompileInputs.cache
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\obj\Debug\net7.0\Data.csproj.CopyComplete
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\obj\Debug\net7.0\Data.dll
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\obj\Debug\net7.0\refint\Data.dll
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\obj\Debug\net7.0\Data.pdb
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\obj\Debug\net7.0\ref\Data.dll
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\bin\Debug\net7.0\Data.runtimeconfig.json
+C:\Users\EDUARDO\source\repos\DoctorApp\DoctorAppBackend\Data\obj\Debug\net7.0\Data.genruntimeconfig.cache
